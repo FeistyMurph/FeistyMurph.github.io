@@ -350,9 +350,9 @@ header h1 {
     box-shadow: 5px 5px gray;
 }
 
-#upload input {
+input {
     padding: 0.5em;
-    width: 50%;
+    width: 60%;
 }
 
 .closebtn {
