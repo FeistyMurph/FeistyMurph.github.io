@@ -342,12 +342,31 @@ header h1 {
 
 #upload {
     border: 3px solid black;
+    text-align: left;
     margin-left: 400px;
     margin-right: 400px;
     margin-bottom: 10px;
-    text-align: center;
     padding: 2em;
     box-shadow: 5px 5px gray;
+}
+
+#uploadTag {
+    text-align: center;
+}
+
+#fname, #lname, #uploadFile {
+    padding: 0.5em;
+    margin: 0.5em;
+    width: 50%;
+}
+
+#submitBtn {
+    border: 2px solid black;
+    text-align: center;
+    font-weight: bold;
+    background: lightgreen;
+    padding: 0.5em;
+    box-shadow: 1px 1px darkgray;
 }
 
 .closebtn {
