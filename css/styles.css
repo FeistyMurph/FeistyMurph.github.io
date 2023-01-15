@@ -350,12 +350,12 @@ header h1 {
     box-shadow: 5px 5px gray;
 }
 
-#fname, lname, #uploadFile {
+#fname, #lname, #uploadFile {
     padding: 0.5em;
-    width: 200px;
+    width: 50%;
 }
 
-#submitButton {
+#submitBtn {
     border: 1px solid black;
     text-align: center;
     background: lightblue;
