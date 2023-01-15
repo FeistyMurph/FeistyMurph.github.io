@@ -345,9 +345,16 @@ header h1 {
     margin-left: 400px;
     margin-right: 400px;
     margin-bottom: 10px;
-    text-align: center;
     padding: 2em;
     box-shadow: 5px 5px gray;
+}
+
+#upload > h1 {
+    text-align: center;
+}
+
+#upload > label {
+    text-align: left;
 }
 
 #fname, #lname, #uploadFile {
