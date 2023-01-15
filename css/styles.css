@@ -342,6 +342,7 @@ header h1 {
 
 #upload {
     border: 3px solid black;
+    text-align: left;
     margin-left: 400px;
     margin-right: 400px;
     margin-bottom: 10px;
@@ -349,12 +350,8 @@ header h1 {
     box-shadow: 5px 5px gray;
 }
 
-#upload > h1 {
+#uploadTag {
     text-align: center;
-}
-
-#upload > label {
-    text-align: left;
 }
 
 #fname, #lname, #uploadFile {
