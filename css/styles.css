@@ -350,9 +350,17 @@ header h1 {
     box-shadow: 5px 5px gray;
 }
 
-input {
+#fname, lname, #uploadFile {
     padding: 0.5em;
     width: 200px;
+}
+
+#submitButton {
+    border: 1px solid black;
+    text-align: center;
+    background: lightblue;
+    padding: 0.5em;
+    box-shadow: 5px 5px gray;
 }
 
 .closebtn {
