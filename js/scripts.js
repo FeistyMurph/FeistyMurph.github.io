@@ -2,7 +2,7 @@
 /* Night mode */
 function checkMode() {
 
-    if (localStorage.getItem("mode") == 'night') {
+    if (localStorage.getItem("mode") === 'night') {
         switchMode();
     }
 }
@@ -206,7 +206,7 @@ function validateForm(attendantName, attendantLastName, attendantPhone, attendan
     return formIsValid;
 };
 
-if (document.body.getAttribute('id') == 'events-page') {
+if (document.body.getAttribute('id') === 'events-page') {
     document.getElementById('events-form').addEventListener('submit', function (event){
         event.preventDefault();
     
