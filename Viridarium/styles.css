@@ -1,0 +1,1033 @@
+
+/*
+    ----------------- GENERAL CSS ------------------------
+*/
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    min-height: 100vh;
+}
+
+body.night-mode {
+    background: #303030;
+}
+
+body, #navbar {
+    max-width: 2000px;
+    margin: auto;
+}
+
+main {
+    width: 100%;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.inactive,
+.inactive * {
+    visibility: hidden!important;
+    height: 0!important;
+    position: absolute;
+}
+
+.grid-cols {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+}
+
+.btn {
+    border-radius: 4px;
+    border: none;
+    box-shadow: 0 2px 10px rgba(0,0,0,.15);
+    cursor: pointer;
+    width: 100px;
+    padding: 10px;
+    font-size: 16px;
+    outline: none;
+}
+
+/*
+    ----------------- END GENERAL CSS ------------------------
+*/
+
+
+
+
+/*
+    ----------------- FONTS ------------------------
+*/
+body {
+    font-family: 'Proza Libre', sans-serif;
+}
+
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Montserrat Alternates', sans-serif;
+}
+/*
+    ----------------- END FONTS ------------------------
+*/
+
+
+
+/*
+    ----------------- HEADER ------------------------
+*/
+
+/* Navbar */
+header {
+    display: flex;
+}
+#home-page header {
+    height: 100vh;
+}
+
+#navbar {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 1fr;
+    gap: 0px 0px;
+    grid-template-areas:
+        "logo-container nav-elements nav-elements nav-elements";
+    align-items: center;
+    padding: 0 50px;
+    position: fixed;
+    width: 100%;
+    height: 70px;
+    background: rgba(0,0,0,.3);
+    z-index: 9;
+}
+
+.night-mode #navbar {
+    background: #323232cc;
+}
+
+.logo-container {
+    cursor: pointer;
+    grid-area: logo-container;
+    justify-self: start;
+    height: inherit;
+    padding: 5px;
+}
+
+.logo-container img {
+    height: 100%;
+}
+
+.nav-elements {
+    grid-area: nav-elements;
+    justify-self: end;
+    height: inherit;
+    color: floralwhite;
+}
+
+.nav-element,
+.nav-btn {
+    margin: 0 1em;
+    height: 100%;
+    vertical-align: middle;
+}
+
+.nav-icon {
+    width: 26px;
+    fill: floralwhite;
+    pointer-events: none;
+}
+
+.night-mode .nav-icon path {
+    fill: wheat!important;
+    stroke: wheat!important;
+}
+
+#navbar button {
+    background: none;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+#mobile-menu {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    text-align: center;
+    background: rgb(0 0 0 / 0.7);
+    height: 100vh;
+    transition: all 300ms;
+}
+
+#mobile-menu-btn {
+    display: none;
+}
+
+.mobile-nav-element {
+    width: 100%;
+    display: block;
+    padding-bottom: 3em;
+    color: #f2f2f2;
+    font-size: 18px;
+}
+.mobile-nav-element:first-child {
+    padding-top: 25%;
+}
+/* END Navbar */
+
+.header-img,
+#home-img {
+    width: 100%;
+    height: 100%;
+    transition: all 1s;
+}
+
+.night-mode .header-img,
+.night-mode #home-img {
+    filter: hue-rotate(120deg);
+}
+
+header h1 {
+    position: absolute;
+    top: 40%;
+    left: 25%;
+    width: 50%;
+    font-size: 50px;
+    text-align: center;
+    color: white;
+}
+
+@media (max-width: 930px) {
+    #navbar {
+        padding: 0 10px;
+        background: #007f54b3;
+    }
+    .nav-element {
+        display: none;
+    }
+    #home-page header {
+        height: auto;
+    }
+    .header-img {
+        height: auto;
+        margin-top: 70px;
+    }
+    #mobile-menu-btn {
+        display: initial;
+    }
+    main{
+        overflow: hidden;
+    }
+}
+
+/*
+    ----------------- END HEADER ------------------------
+*/
+
+
+/*
+    ----------------- ANIMALS PAGE ------------------------
+*/
+#animals-page main {
+    background-image: linear-gradient(to bottom, #65aeca, #45a9bd, #24a4ab, #029d95, #0c967c, #388c61, #4e8149, #5d7535, #6c642c, #70542d, #6c4633, #603c39);
+}
+
+.animals-grid-col1,
+.animals-grid-col2,
+.animals-grid-col3 {
+    padding: 2em;
+    height: 100%;
+}
+
+/* Animals Info Cards */
+.animals-info-card {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+    gap: 0px 0px;
+    background: url('../images/info-animal.jpg');
+    background-size: cover;
+    padding: 1em;
+    height: 100%;
+  }
+  
+.info-text-top { grid-area: 1 / 1 / 3 / 3; }
+
+.info-text-mid { grid-area: 3 / 2 / 5 / 4; }
+
+.info-img-top { grid-area: 1 / 3 / 3 / 4; }
+
+.info-img-mid { grid-area: 3 / 1 / 5 / 2; }
+
+.info-text-btm { grid-area: 5 / 1 / 7 / 3; }
+
+.info-img-btm { grid-area: 5 / 3 / 7 / 4; }
+
+.info-img img {
+    width: 100%;
+}
+.info-img,
+.info-text-mid,
+.info-text-btm {
+    align-self: center;
+}
+
+@media (max-width: 1300px) {
+    .animals-grid-col1, .animals-grid-col2, .animals-grid-col3 {
+        padding: 1em;
+    }
+}
+
+@media (max-width: 420px) {
+    .animals-grid {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    }
+}
+
+
+/*
+    ----------------- END ANIMALS PAGE ------------------------
+*/
+
+
+/* 
+    ------------------CAFE PAGE------------------------- 
+*/
+
+#brick {
+    width: 100%;
+    height: 100%;
+}
+/*
+    ----------------- END CAFE PAGE ------------------------
+*/
+
+
+
+/*
+-----------------------GALLERY----------------------------
+*/
+
+#gallery {
+    background-image: 
+    linear-gradient(to bottom, #febe00, 
+    #f5b716, #edb021, #e4aa2a, #dba330, 
+    #d69d30, #d2982f, #cd922f, #cc8c29,
+     #cb8623, #c9801c, #c87a16);
+}
+
+#gallery-page main {
+    padding-bottom: 1em;
+}
+
+.photo:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.gallery {
+    float: left;
+    width: 33%;
+    padding: 3em;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+#upload {
+    border: 3px solid black;
+    text-align: left;
+    margin-left: 400px;
+    margin-right: 400px;
+    margin-bottom: 10px;
+    padding: 2em;
+    box-shadow: 5px 5px gray;
+}
+
+#uploadTag {
+    text-align: center;
+}
+
+#fname, #lname, #uploadFile {
+    padding: 0.5em;
+    margin: 0.5em;
+    width: 50%;
+}
+
+#submitBtn {
+    border: 2px solid black;
+    text-align: center;
+    font-weight: bold;
+    background: lightgreen;
+    padding: 0.5em;
+    box-shadow: 1px 1px darkgray;
+}
+
+.closebtn {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    color: #376119;
+    font-size: 50px;
+    cursor: pointer;
+  }
+
+.display {
+    position: relative;
+    display: none;
+    width: 80%;
+    height: auto;
+    margin: auto;
+}
+
+.gallery:hover img {
+    transform: scale(1.25);
+    box-shadow: 5px 5px black;
+    transition: all 1s ease-in 0.3s;
+    opacity: 35%;
+    filter: blur(.5px);
+}
+
+.imagetxt {
+    display: none;
+}
+
+.blowup {
+    box-shadow: 5px 5px #382700;
+}
+
+@media screen and (max-width: 1100px) {
+    .gallery {
+        width: 40%;
+    }
+}
+
+@media screen and (max-width: 750px) {
+    .gallery {
+        width: 80%;
+    }
+}
+
+
+/*
+    ----------------- EVENTS PAGE ------------------------
+*/
+#events-page .grid-cols{
+    padding-bottom: 100px;
+}
+
+#events-page main {
+    background: url('../images/Events/bricks.jpg');
+    background-size: cover;
+}
+
+.event-container {
+    margin: 2em;
+    position: relative;
+    filter: drop-shadow(2px 4px 6px black);
+}
+
+.event-container img {
+    width: 100%;
+}
+
+.event-desc {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    padding: 2em;
+    z-index: -1;
+    background: #f0f8ffa1;
+    visibility: hidden;
+}
+
+.event-container:hover .event-desc {
+    z-index: 2;
+    visibility: visible;
+}
+.event-container:hover img {
+    filter: blur();
+}
+
+/* Form */
+#events-page form {
+    background: whitesmoke;
+    padding: 50px;
+    width: 75%;
+    margin: auto;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,.15);
+}
+
+#events-page .form-group {
+    margin-bottom: 20px;
+}
+
+#events-page select, 
+#events-page input[type=text], 
+#events-page input[type=email], 
+#events-page input[type=number], 
+#events-page textarea {
+    padding: 10px;
+    border: 1px solid #D7DBE0;
+    border-radius: 3px;
+    width: 100%;
+    background: floralwhite;
+}
+
+#events-page .submit-container {
+    text-align: center;
+}
+
+#events-page input[type=submit] {
+    background: forestgreen;
+    color: white;
+    transition: background ease 300ms;
+}
+
+#events-page input[type=submit]:hover {
+    background: #65aeca;
+}
+
+span.val-text {
+    color: #d92626;
+    padding: 1em 0;
+    display: block;
+}
+
+/* Calendar */
+#events-calendar {
+    position: relative;
+    background: whitesmoke;
+    box-shadow: 0 2px 10px rgba(0,0,0,.15);
+    border-radius: 3px;
+    padding: 2em;
+    width: 80%;
+    height: fit-content;
+    margin: 0 auto;
+    text-align: center;
+    max-width: 600px;
+}
+
+.calendar-month {
+    margin-bottom: 2em;
+}
+
+#events-calendar .calendar-days-header,
+#events-calendar .calendar-days {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+}
+
+.calendar-days div {
+    padding: 12%;
+    margin: 15%;
+    cursor: pointer;
+}
+
+.calendar-days div:first-child {
+    grid-column: 3;
+}
+
+#events-calendar .has-event {
+    border-radius: 5px;
+    background: #65aeca;
+    color: white;
+    transition: all ease 300ms;
+}
+
+#events-calendar .has-event:hover {
+    border-radius: 25px 0 25px 0;
+    background: forestgreen;
+}
+
+#events-calendar .event {
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: black;
+    width: 100%;
+    padding: 5%;
+    margin: 0;
+}
+
+#events-calendar.showing-event,
+#events-calendar.showing-event .has-event {
+    background: white;
+    color: white;
+    pointer-events: none;
+}
+
+.close-event {
+    margin-top: 20px;
+    pointer-events: all!important;
+    background-color: coral;
+    color: white;
+    transition: background ease 300ms;
+}
+
+.close-event:hover {
+    background: #fa4e0f;
+}
+
+@media (max-width: 800px) {
+    #events-page form {
+        background: whitesmoke;
+        padding: 25px;
+        width: 90%;
+        margin-bottom: 50px;
+    }
+    #events-calendar {
+        width: 90%;
+    }
+}
+/*
+    ----------------- END EVENTS PAGE ------------------------
+*/
+
+
+/* viridarium banner css */
+
+.viridarium-banner  {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    box-sizing: border-box;
+    flex-flow: row wrap;
+    background-color: #020301;
+    z-index: 2;
+}
+
+.viridarium-banner-txt {
+    margin: 0.5rem 2rem;
+    font-family: 'Montserrat Alternates', sans-serif;
+    color: #ACC888; 
+    font-size: 1.2rem;
+    font-weight: bold;
+    line-height: 1.7rem;
+    text-align: center;
+}
+
+.night-mode > .viridarium-banner-txt {
+    margin: 0.5rem 2rem;
+    font-family: 'Montserrat Alternates', sans-serif;
+    color: #A0D176; 
+    font-weight: bold;
+    font-size: 1.2rem;
+    line-height: 1.7rem;
+    text-align: center;
+}
+
+a.viridarium-banner-btn {
+    font-family: 'Montserrat Alternates', sans-serif;
+    color: #020301;
+    background-color: #A0D176;
+    border-color: #A0D176;
+    font-size: 1.2em;
+    font-weight: bold;
+    text-decoration: none;
+    padding: 1.5vmin;
+    margin: 0.5rem 2rem;
+}
+
+a.viridarium-banner-btn:hover {
+    font-family: 'Montserrat Alternates', sans-serif;
+    color: #A0D176;
+    font-weight: bold;
+    background-color: #202B10;
+    border: 0.5px solid #A0D176;
+    padding: none;
+}
+
+@media screen and (max-width: 900px) {
+    a.viridarium-banner-btn, a.viridarium-banner-btn:hover {
+        text-decoration: underline;
+        color: #A0D176;
+        background: none;
+        border: none;
+        font-size: 1em;
+        font-weight: bold;
+        text-decoration: #202B10;
+        padding: none;
+        margin: 0;
+    }
+}
+
+/*---------- END viridarium banner CSS--------*/
+
+
+/*---------- flexbox CSS--------*/
+
+.flex-container {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    box-sizing: border-box;
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    opacity: 1;
+}
+
+.rooms-flex-container {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    box-sizing: border-box;
+    position: relative;
+    width: 100vw;
+    height: 100%;
+    opacity: 1;
+    clear: all;
+}
+
+.flex-item {
+    display: inline-flex;
+    width: 50vw;
+    height: 50vh;
+    vertical-align: top;
+    overflow: hidden;
+    position: relative;
+    z-index: 0;
+    cursor: pointer;
+}
+
+.rooms-flex-item {
+    display: inline-flex;
+    width: 48vw;
+    vertical-align: top;
+    overflow: hidden;
+    position: relative;
+    padding: 2em;
+    z-index: 0;
+    cursor: pointer;
+}
+
+.flex-image {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    transition: opacity 1s ease-in 0.25s;
+    opacity: 1;
+}
+
+.flex-image.inviewport {
+    opacity: 1;
+}
+
+.flex-content {
+    flex: 0 1 100%;
+    z-index: 1;
+    transition: transform 1s ease-in 0.25s;
+    transform: perspective(500px) translateZ(0px);
+    text-align: center;
+    position: relative;
+    text-decoration: none;
+    color:#F6F5F3;
+    text-shadow: 3px 3px 5px #020301;
+}
+
+
+.flex-content:hover {
+    transition: transform 1s ease-in 0.25s;
+    transform: perspective(600px) translateZ(30px);
+}
+
+.flex-title, .rooms-flex-title {
+    position: absolute;
+    box-sizing: border-box;
+    color:#F6F5F3;
+    text-shadow: 3px 3px 5px #020301;
+    font-size: 4.5vmin;
+    opacity: 1;
+    bottom: 0;
+    padding: 2vmin;   
+}
+
+.rooms-flex-title {
+    padding: 4.5vmin;  
+    text-shadow: 2px 2px 5px #020301;
+}
+
+.flex-item:hover .flex-title {
+    transition: opacity 0.5s ease-in 0.25s;
+    opacity: 0;
+}
+
+.flex-details {
+    transition: opacity 0.5s ease-in;
+    opacity: 0;
+}
+
+.flex-item:hover .flex-details {
+    transition: opacity 0.5s ease-in 0.25s;
+    opacity: 1;
+    background: rgba(0, 0, 0, 0.8);
+    width: 100%;
+    height: 100%;
+    color:#F6F5F3;
+    text-shadow: 3px 3px 5px #020301;
+}
+
+.details-title, .details-description  {
+    display: flex;
+    flex-direction: column;
+    vertical-align: center;
+    justify-content: center;
+    content: '';
+    position: relative;
+    box-sizing: border-box;
+    font-family: 'Montserrat Alternates', sans-serif;
+    width: 100%;
+    padding: 4.5vmin;
+    transition: opacity 0.5s ease-in;
+    opacity: 0;
+}
+
+.details-title::after {
+    display: block;
+    width: 10vmax;
+    height: 2.5px;
+    content: '';
+    background: #A0D176;
+    margin: 2.5vmin auto;
+}
+
+.flex-item:hover .details-title {
+    position: relative;
+    box-sizing: border-box;
+    width: 100%;
+    padding: 10vmin 2vmin 5vmin 2vmin;
+    font-size: 4vmin;
+    transition: opacity 1s ease-in 0.25s;
+    opacity: 1;
+    bottom: 0;
+}
+
+.flex-item:hover .details-description {
+    position: relative;
+    box-sizing: border-box;
+    width: 100%;
+    padding: 2vmin;
+    font-size: 3vmin;
+    transition: opacity 1s ease-in 0.25s;
+    opacity: 1;
+    bottom: 0;
+}
+
+@media screen and (max-width: 900px) {
+    .flex-container, .rooms-flex-container {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+    }
+
+    .rooms-flex-containter {
+        padding: 1em;
+        clear: none;
+    }
+
+    .flex-item {
+        width: 100vw;
+    }
+    .rooms-flex-item {
+        width: 96vw;
+    }
+
+    .flex-title, .rooms-flex-title {
+        padding: 4.5vmin 4.5vmin 1.5em;
+        
+    }
+
+    .flex-item:hover .flex-details {
+        font-size: 50%;
+    }
+}
+
+/*---------- END flexbox CSS--------*/
+
+
+
+/*-------rooms paper details CSS-------*/
+#rooms-page main {
+    background-image: linear-gradient(to bottom, #65aeca, #45a9bd, #24a4ab, #029d95, #0c967c, #388c61, #4e8149, #5d7535, #6c642c, #70542d, #6c4633, #603c39);
+}
+
+.rooms-details {
+    padding: 2em;
+    height: 100%;
+    clear: all;
+}
+
+.rooms-content-title, .rooms-details-title { 
+    color:#F6F5F3;
+    text-shadow: 3px 3px 5px #020301;
+    text-align: center;
+    font-size: 1.7em;
+    cursor: pointer;
+    padding-bottom: 1em;
+}
+
+.rooms-details-title-top { 
+    font-size: 1.5em;
+    color:#F6F5F3;
+    text-shadow: 3px 3px 5px #020301;
+    padding-bottom: 10px;
+}
+
+.rooms-details-description-top { 
+    font-size: 1.2em;
+    color:#020301;
+    text-shadow: 1px 1px 5px #F6F5F3;
+    padding-bottom: 25px;
+}
+
+.rooms-details-title-bottom { 
+    font-size: 1.5em;
+    color:#F6F5F3;
+    text-shadow: 3px 3px 5px #020301;
+    padding-bottom: 10px;
+}
+
+.rooms-details-description-bottom { 
+    font-size: 1.2em;
+    color:#020301;
+    text-shadow: 1px 1px 5px #F6F5F3; 
+    padding-bottom: 25px;
+}
+
+
+/*---------- END rooms paper details  CSS--------*/
+
+
+/*---------- AMP Design CSS--------*/
+
+.wall-header-img {
+    position: absolute;
+    background-image: url('images/Paludarium-wall.png');
+    background-position: contain;
+    width: 100%;
+    height: auto;
+    z-index: -1;
+}
+
+.about {  
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    position: fixed;
+    top: 25vh;
+    left: 5vw;  
+    z-index: 0;
+}
+
+.about-team {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    flex: 0 1 60vw;
+    position: relative;
+    box-sizing: border-box;
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 50px;  
+}
+
+#about-title {
+    display: flex;
+    box-sizing: border-box;
+    font-family: 'Montserrat Alternates', sans-serif;
+    font-size: 5em;
+    color:#F6F5F3;
+    text-shadow: 3px 3px 5px #020301;
+    text-align: left;
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 50px;  
+    z-index: 1;
+}
+
+#about-team-title {
+    display: relative;
+    flex-wrap: nowrap;
+    font-family: 'Proza Libre', sans-serif;
+    font-size: 3.5em;
+    color: #A0D176;
+    text-shadow: 2px 2px 5px #020301;
+    text-align: left;
+    padding-bottom: 0.2em;
+    z-index: 1;
+}
+
+.about-team p {
+    position: relative;
+    display: inline-flex;
+    flex-wrap: wrap;
+    font-family: 'Proza Libre', sans-serif;
+    font-size: 1.25em;
+    color:#F6F5F3;
+    text-shadow: 2px 2px 5px #020301;
+    text-align: left;
+    padding: 0 0 0.75em 0;
+    z-index: 1;
+}
+
+.about-team a {
+    font-family: 'Proza Libre', sans-serif;
+    font-style: italic;
+    font-size: 1em;
+    color: #A0D176;
+    text-shadow: 1px 1px 5px #020301;
+    text-decoration: none;
+    text-align: left;
+}
+
+
+
+/*---------- End AMP Design CSS--------*/
+
+
+.footer-banner  {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    box-sizing: border-box;
+    flex-flow: row wrap;
+    background-color: #020301;
+}
+
+a.footer-banner-btn, h3.footer-banner-txt {
+    text-align: center;
+    font-family: 'Proza Libre', sans-serif;
+    font-size: 1.1em;
+    font-weight: bold;
+    letter-spacing: 0.2em;
+    color:  #202B10;
+    text-shadow: 0.5px 0.5px 2.5px #A0D176;
+    padding: 15px;
+}
+
+a.footer-banner-btn {
+    border: none;  
+}
+
+a.footer-banner-btn:hover {
+    color: #020301;
+    background-color: #A0D176;
+    border: none;
+    text-decoration: none;
+    padding: none;
+    margin: 0.5rem 0.5rem;
+}
+
+/*-------END footer CSS----------*/
